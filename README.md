@@ -13,10 +13,10 @@ Det är MYCKET VIKTIGT att ni inte ändrar på någonting mellan rad 19-70 i ind
 Själva programmet i script.js består av ett så kallat global objekt. Detta objekt heter oGameData, och innehåller allt från båda spelarnas symboler, namn, färgval osv, till spelplanen. Tack vare att allt detta är globalt så kommer ni att kunna komma åt denna data från alla era funktioner senare under utvecklingens gång. (För att komma åt spelplanen anropar ni tex oGameData.gameField).
 
 ### Versionshantering
-Nu har det äntligen blivit dags att testa på branscher här på GitHub! Såhär vill jag att strukturen är uppbyggd:
+Nu har det äntligen blivit dags att testa på brancher här på GitHub! Såhär vill jag att strukturen är uppbyggd:
 * Er mainbranch får endast innehålla en fullt fungerande version av spelet. Detta innebär att ni mergar ert projekt till main först EFTER att ni är helt färdiga med spelet.
 * Skapa en devbranch. Ni får ALDRIG programmera direkt i er devbranch. Devbranchen skall bara innehålla helt fungerande funktioner.
-* Innan ni börjar programmera en funktion så skapar ni en featurebransch med den funktionens namn (tex feat-isWinner), med er devbranch som source. Ni sitter sedan och programmerar i er featurebransch tills ni skrivit en funktion som är färdig och testad, innan ni pushar den till GitHub och där mergar den till er devbransch.
+* Innan ni börjar programmera en funktion så skapar ni en featurebranch med den funktionens namn (tex feat-isWinner), med er devbranch som source. Ni sitter sedan och programmerar i er featurebranch tills ni skrivit en funktion som är färdig och testad, innan ni pushar den till GitHub och där mergar den till er devbranch.
 * På så sätt fortsätter ni med att varje ny funktion får en ny featurebranch som pushas och mergas till dev först när den är färdig och testad.
 * Och som sagt: först EFTER att dev innehåller en fullt fungerande version av ert spel på mergar ni ihop dev med main.
 
