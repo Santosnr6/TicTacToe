@@ -17,7 +17,7 @@ function initGlobalObject() {
 
     //Datastruktur för vilka platser som är lediga respektive har brickor
     //Genom at fylla i här med antingen X eler O kan ni testa era rättningsfunktioner 
-    oGameData.gameField = ['', '', '', '', '', '', '', '', ''];
+    oGameData.gameField = ['X', 'X', 'X', '', '', '', '', '', ''];
     
     /* Testdata för att testa rättningslösning */
     //oGameData.gameField = ['X', 'X', 'X', '', '', '', '', '', ''];
