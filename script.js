@@ -78,7 +78,7 @@ function checkForGameOver() {
         return 2;
     }
     //Kontrollerar om spelet är oavgjort, returnerar isåfall 3
-    if(checkForDraw() ) {
+    if(checkForDraw()) {
         return 3;
     }
     //Annars returneras 0, och spelet fortlöper
