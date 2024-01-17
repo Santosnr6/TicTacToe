@@ -17,7 +17,7 @@ function initGlobalObject() {
 
     //Datastruktur för vilka platser som är lediga respektive har brickor
     //Genom at fylla i här med antingen X eler O kan ni testa era rättningsfunktioner 
-    oGameData.gameField = ['', '', '', '', '', '', '', '', ''];
+    oGameData.gameField = ['', '', '', 'O', 'O', 'O', '', '', ''];
     
     /* Testdata för att testa rättningslösning */
     //oGameData.gameField = ['X', 'X', 'X', '', '', '', '', '', ''];
@@ -94,12 +94,41 @@ function checkForGameOver() {
 //som motsvarar nuvarande combo innehåller playerIn. Om sant, ändra värdet på flaggan.
 //Returnera flaggan isWinner
 function checkWinner(playerIn) {
-    
+    const winningCombos = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],
+        [1, 5, 9],
+        [3, 5, 7]
+    ];
+
+    let isWinner = false;
+
+    for(let i = 0; i < winningCombos.length; i++) {
+        let combo = winningCombos[i];
+        let a = oGameData.gameField[combo[0] - 1];
+        let b = oGameData.gameField[combo[1] - 1];
+        let c = oGameData.gameField[combo[2] - 1];
+
+        if(playerIn === a && playerIn === b && playerIn === c) {
+            isWinner = true;
+            break;
+        }
+    }
+
+    return isWinner;
 }
 
 //Kontrollera om alla platser i oGameData.GameField är fyllda. Om sant returnera true, annars false.
 function checkForDraw() {
-
+    if(oGameData.gameField.includes('')) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 //Funktion som förbereder spelet inför start
@@ -107,9 +136,9 @@ function prepGame() {
 
 }
 
-function validateForm() {
+// function validateForm() {
 
-}
+// }
 
 function initiateGame() {
 
@@ -123,9 +152,9 @@ function changePlayer() {
 
 }
 
-function timer() {
+// function timer() {
 
-}
+// }
 
 function gameOver() {
 

@@ -78,14 +78,11 @@
 
         if(checkForGameOver() === 1) {
             console.log("Spelare X har vunnit!");
-        }
-        if(checkForGameOver() === 2 ) {
+        } else if(checkForGameOver() === 2 ) {
             console.log("Spelare O har vunnit!");
-        }
-        if(checkForGameOver() === 3) {
+        } else if(checkForGameOver() === 3) {
             console.log("Spelet slutade oavgjort");
-        }
-        else{
+        } else{
             console.log("Speler fortsätter");
         }
     </script>
