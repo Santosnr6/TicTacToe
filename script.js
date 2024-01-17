@@ -94,7 +94,7 @@ function checkForGameOver() {
 //som motsvarar nuvarande combo innehåller playerIn. Om sant, ändra värdet på flaggan.
 //Returnera flaggan isWinner
 function checkWinner(playerIn) {
-
+    
 }
 
 //Kontrollera om alla platser i oGameData.GameField är fyllda. Om sant returnera true, annars false.
@@ -115,7 +115,7 @@ function initiateGame() {
 
 }
 
-function startGame () {
+function executeMove () {
 
 }
 
