@@ -83,4 +83,14 @@ Denna funktion tar emot resultatet för spelet (1 om spelare 1 vunnit, 2 och spe
 * Anropa funktionen "initGlobalObject()".
 
 ### Tredje etappen
-To be continued...
+Denna vecka höjer vi svårighetsgraden något genom att inte ange några detaljerade steg-för-steginstruktioner.
+Kortfattat så skall ni i "prepGame()" anropa funktionen "validateForm()" istället för "initiateGame()". Först efter att "validateForm()" returnerat true anropar ni "initiateGame()".
+
+#### validateForm()
+Krav för att få spela:
+* Användarnamnet måste vara mellan 3 och 10 tecken långt.
+* Den valda färgen får inte vara svart eller vit.
+* Lägg gärna till egna saker att kolla efter också.
+
+#### Bonusfunktion: timer()
+Om ni vill utmana er själva lite så kan ni även implementera en timer som kickar igång varje gång det blir en ny spelares tur, har hen 5 sekunder på sig att göra sitt drag. Har man inte gjort sitt drag innan tiden löper ut, byter ni till den andre spelaren.
