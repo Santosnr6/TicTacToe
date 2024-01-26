@@ -248,7 +248,15 @@ function executeMove (event) {
 function changePlayer() {
     console.log('changePlayer()');
 
+    const headRef = document.querySelector('.jumbotron > h1');
 
+    if(oGameData.currentPlayer === "X") {
+        oGameData.currentPlayer = oGameData.playerTwo;
+        headRef.textContent = `Aktuell spelare är ${oGameData.nickNamePlayerTwo}`;
+    } else {
+        oGameData.currentPlayer = oGameData.playerOne;
+        headRef.textContent = `Aktuell spelare är ${oGameData.nickNamePlayerOne}`;
+    }
 }
 
 // function timer() {
