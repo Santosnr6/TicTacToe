@@ -255,7 +255,21 @@ function changePlayer() {
 // }
 
 function gameOver(result) {
-    
+    document.querySelector('#gameArea').removeEventListener('click', executeMove);
+    document.querySelector('#theForm').classList.remove('d-none');
+    document.querySelector('#gameArea').classList.add('d-none');
+
+    let winner = '';
+    if(result === 1) {
+        winner = oGameData.nickNamePlayerOne;
+    } else if (result === 2) {
+        winner = oGameData.nickNamePlayerTwo;
+    } else if(result === 3) {
+        winner = 'Ingen';
+    }
+
+    const headRef = document.querySelector('.jumbotron > h1');
+    headRef.textContent = `${winner} vann! Spela igen?`;
 
     // initGlobalObject();
 }
