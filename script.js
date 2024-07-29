@@ -139,145 +139,28 @@ function checkForDraw() {
 //Funktion som förbereder spelet inför start
 function prepGame() {
     console.log('prepGame()');
-    document.querySelector('#gameArea').classList.add('d-none');
-    document.querySelector('#newGame').addEventListener('click', () => {
-        if(validateForm()) {
-            initiateGame();
-        }
-    });
+    
 }
 
 function validateForm() {
-    console.log('validateForm()');
-
-    const nickOne = document.querySelector('#nick1');
-    const nickTwo = document.querySelector('#nick2');
-    const colorOne = document.querySelector('#color1');
-    const colorTwo = document.querySelector('#color2');
-
-    try {
-        if(nickOne.value.length < 3 || nickOne.value.length > 10) {
-            throw {
-                'nodeRef' : nickOne,
-                'msg' : 'Namnet måste vara mellan 3 och 10 tecken!'
-            }
-        } else if (nickTwo.value.length < 3 || nickTwo.value.length > 10) {
-            throw {
-                'nodeRef' : nickTwo,
-                'msg' : 'Namnet måste vara mellan 3 och 10 tecken!'
-            }
-        } else if (colorOne.value === '#000000' || colorOne.value === '#ffffff') {
-            throw {
-                'nodeRef' : colorOne,
-                'msg' : 'Färgen får inte vara vit eller svart!'
-            }
-        } else if (colorTwo.value === '#000000' || colorTwo.value === '#ffffff') {
-            throw {
-                'nodeRef' : colorTwo,
-                'msg' : 'Färgen får inte vara vit eller svart!'
-            }
-        }
-        return true;
-    } catch(error) {
-        document.querySelector('#errorMsg').textContent = error.msg;
-        error.nodeRef.focus();
-        return false;
-    }
+    console.log('validateForm()')
 }
 
 function initiateGame() {
     console.log('initiateGame()');
-    document.querySelector('#theForm').classList.add('d-none');
-    document.querySelector('#gameArea').classList.remove('d-none');
-    document.querySelector('#errorMsg').textContent = '';
-
-    oGameData.nickNamePlayerOne = document.querySelector('#nick1').value;
-    oGameData.nickNamePlayerTwo = document.querySelector('#nick2').value;
-    oGameData.colorPlayerOne = document.querySelector('#color1').value;
-    oGameData.colorPlayerTwo = document.querySelector('#color2').value;
-
-    const tdRefs = document.querySelectorAll('td');
-    tdRefs.forEach(ref => {
-        ref.textContent = '';
-    });
-
-    let playerChar = '';
-    let playerName = '';
-
-    const random = Math.random();
-    if(random < 0.5) {
-        playerChar = oGameData.playerOne;
-        playerName = oGameData.nickNamePlayerOne;
-        oGameData.currentPlayer = oGameData.playerOne;
-    } else {
-        playerChar = oGameData.playerTwo;
-        playerName = oGameData.nickNamePlayerTwo;
-        oGameData.currentPlayer = oGameData.playerTwo;
-    }
-
-    const headRef = document.querySelector('.jumbotron > h1');
-    headRef.textContent = `Aktuell spelare är ${playerName}`;
-
-    document.querySelector('#gameArea').addEventListener('click', executeMove);
+    
 }
 
 function executeMove (event) {
     console.log('executeMove()');
     
-    if(event.target.tagName === 'TD') {
-        if(event.target.textContent === '') {
-            const dataId = event.target.getAttribute('data-id');
-            oGameData.gameField[dataId] = oGameData.currentPlayer;
-            event.target.textContent = oGameData.currentPlayer;
-            
-            if(oGameData.currentPlayer === "X") {
-                event.target.style.backgroundColor = oGameData.colorPlayerOne;
-            } else {
-                event.target.style.backgroundColor = oGameData.colorPlayerTwo;
-            }
-            changePlayer();
-        }
-    }
-    const result = checkForGameOver();
-    console.log(result);
-    if(result !== 0) {
-        gameOver(result);
-    }
 }
 
 function changePlayer() {
     console.log('changePlayer()');
 
-    const headRef = document.querySelector('.jumbotron > h1');
-
-    if(oGameData.currentPlayer === "X") {
-        oGameData.currentPlayer = oGameData.playerTwo;
-        headRef.textContent = `Aktuell spelare är ${oGameData.nickNamePlayerTwo}`;
-    } else {
-        oGameData.currentPlayer = oGameData.playerOne;
-        headRef.textContent = `Aktuell spelare är ${oGameData.nickNamePlayerOne}`;
-    }
 }
 
-// function timer() {
-
-// }
-
 function gameOver(result) {
-    document.querySelector('#gameArea').removeEventListener('click', executeMove);
-    document.querySelector('#theForm').classList.remove('d-none');
-    document.querySelector('#gameArea').classList.add('d-none');
-
-    let winner = '';
-    if(result === 1) {
-        winner = oGameData.nickNamePlayerOne;
-    } else if (result === 2) {
-        winner = oGameData.nickNamePlayerTwo;
-    } else if(result === 3) {
-        winner = 'Ingen';
-    }
-
-    const headRef = document.querySelector('.jumbotron > h1');
-    headRef.textContent = `${winner} vann! Spela igen?`;
-    // initGlobalObject();
+    console.log('gameOver()');
 }
