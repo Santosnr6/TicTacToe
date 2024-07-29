@@ -20,7 +20,7 @@ Nu har det äntligen blivit dags att testa på brancher här på GitHub! Såhär
 * På så sätt fortsätter ni med att varje ny funktion får en ny featurebranch som pushas och mergas till dev först när den är färdig och testad.
 * Och som sagt: först EFTER att dev innehåller en fullt fungerande version av ert spel på mergar ni ihop dev med main.
 
-### Första etappen
+### Första etappen - redan färdig
 Denna första etapp skall vi sätta era kunskaper ordentligt på prov för att se vad ni har lärt er såhär långt! Den första etappen består av att skapa två rättningsfunktioner för spelet. En som kontrollerar om vi har en vinnare(isWinner()), och en som kontrollerar om spelet är oavgjort (checkForDraw()).
 Mer genomgående instruktioner finner ni i kommentarer ovanför respektive funktion. (Notera att dessa kommentarer enbart är ett förslag på hur ni kan gå till väga. Det enda kravet är att funktionen skall returnera sant eller falskt). 
 
